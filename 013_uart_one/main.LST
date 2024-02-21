@@ -1,0 +1,70 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              02/15/2024 15:22:58 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\app\keil 5\keil_v4\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg52.h"//选择Inter 8052编译
+   2          #include "intrins.h"
+   3          /*LED引脚*/
+   4          sbit ledOne = P3^7;
+   5          sbit ledTwo = P3^6;
+   6          /*串口*/
+   7          //sfr AUXR = 0x8E;//声明
+   8          /*延迟1000秒*/
+   9          void Delay1000ms(){             //@11.0592MHz
+  10   1              unsigned char i, j, k;
+  11   1      
+  12   1              _nop_();
+  13   1              i = 8;
+  14   1              j = 1;
+  15   1              k = 243;
+  16   1              do
+  17   1              {
+  18   2                      do
+  19   2                      {
+  20   3                              while (--k);
+  21   3                      } while (--j);
+  22   2              } while (--i);
+  23   1      }
+  24          /*串口1初始化*/
+  25          void UartInit(void){            //9600bps@11.0592MHz
+  26   1              PCON &= 0x7F;           //波特率不倍速
+  27   1              SCON = 0x50;            //8位数据,可变波特率
+  28   1              AUXR &= 0xBF;           //定时器1时钟为Fosc/12,即12T
+  29   1              AUXR &= 0xFE;           //串口1选择定时器1为波特率发生器
+  30   1              TMOD &= 0x0F;           //清除定时器1模式位
+  31   1              TMOD |= 0x20;           //设定定时器1为8位自动重装方式
+  32   1              TL1 = 0xFD;             //设定定时初值
+  33   1              TH1 = 0xFD;             //设定定时器重装值
+  34   1              ET1 = 0;                //禁止定时器1中断
+  35   1              TR1 = 1;                //启动定时器1
+  36   1      }
+  37          /**/
+  38          void main(){
+  39   1              char data_msg= 'a';
+  40   1              UartInit();
+  41   1              while(1){
+  42   2                      Delay1000ms();
+  43   2                      SBUF =data_msg;
+  44   2              }
+  45   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.52.0.0   MAIN                                                              02/15/2024 15:22:58 PAGE 2   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

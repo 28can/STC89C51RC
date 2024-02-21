@@ -1,0 +1,109 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              02/16/2024 22:55:07 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\app\keil 5\keil_v4\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg52.h"//选择Inter 8052编译
+   2          #include "intrins.h"
+   3          /*LED引脚*/
+   4          sbit ledOne = P3^7;
+   5          sbit ledTwo = P3^6;
+   6          /*全局变量*/
+   7          char cmd;
+   8          /*延迟10毫秒*/
+   9          void Delay10ms(){               //@11.0592MHz
+  10   1              unsigned char i, j;
+  11   1      
+  12   1              i = 18;
+  13   1              j = 235;
+  14   1              do
+  15   1              {
+  16   2                      while (--j);
+  17   2              } while (--i);
+  18   1      }
+  19          /*延迟1000毫秒*/
+  20          void Delay1000ms(){             //@11.0592MHz
+  21   1              unsigned char i, j, k;
+  22   1      
+  23   1              _nop_();
+  24   1              i = 8;
+  25   1              j = 1;
+  26   1              k = 243;
+  27   1              do
+  28   1              {
+  29   2                      do
+  30   2                      {
+  31   3                              while (--k);
+  32   3                      } while (--j);
+  33   2              } while (--i);
+  34   1      }
+  35          /*串口1初始化*/
+  36          void UartInit(void){            //9600bps@11.0592MHz
+  37   1              AUXR = 0x01;
+  38   1              SCON = 0x50;            //选择串口工作方式1，使能REN
+  39   1              TMOD &= 0xF0;
+  40   1              TMOD |= 0x20;           //设定定时器1为8位自动重装方式
+  41   1              TL1 = 0xFD;             
+  42   1              TH1 = 0xFD;             //设定9600波特率
+  43   1              TR1 = 1;                //启动定时器1
+  44   1              EA = 1;//开启总中断
+  45   1              ES = 1;
+  46   1      }
+  47          /*发送字符*/
+  48          void sendByte(char data_msg){
+  49   1              SBUF =data_msg;
+  50   1              //Delay10ms();
+  51   1              while(!TI);
+  52   1              TI = 0;
+  53   1      }
+  54          /*发送字符串*/
+  55          void sendString(char* str){
+C51 COMPILER V9.52.0.0   MAIN                                                              02/16/2024 22:55:07 PAGE 2   
+
+  56   1              while(*str != '\0'){
+  57   2                      sendByte(*str);
+  58   2                      str++;
+  59   2              }
+  60   1      }
+  61          void main(){
+  62   1              ledOne = 1;
+  63   1              UartInit();
+  64   1              while(1){
+  65   2                      Delay1000ms();
+  66   2                      sendString("hello world!\r\n");
+  67   2              }
+  68   1      }
+  69          void Uart_Handler() interrupt 4
+  70          {
+  71   1              if(RI){
+  72   2                      RI = 0;
+  73   2                      cmd =SBUF;
+  74   2                      if(cmd == 49){//assii
+  75   3                              ledOne = 0;
+  76   3                      }
+  77   2                      if(cmd == 48){
+  78   3                              ledOne = 1;
+  79   3                      }
+  80   2              }
+  81   1              if(TI){
+  82   2                      
+  83   2              }
+  84   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    125    ----
+   CONSTANT SIZE    =     15    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

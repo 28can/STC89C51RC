@@ -1,0 +1,54 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              01/16/2024 04:14:51 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\app\keil 5\keil_v4\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg52.h"//—°‘ÒInter 8052±‡“Î
+   2          #include "intrins.h"
+   3          
+   4          sbit ledOne = P3^7;
+   5          sbit ledTwo = P3^6;
+   6          sbit vibrate = P3^3;//D0Ω”œﬂ
+   7          void Delay2000ms()              //@11.0592MHz
+   8          {
+   9   1              unsigned char i, j, k;
+  10   1      
+  11   1              _nop_();
+  12   1              i = 15;
+  13   1              j = 2;
+  14   1              k = 235;
+  15   1              do
+  16   1              {
+  17   2                      do
+  18   2                      {
+  19   3                              while (--k);
+  20   3                      } while (--j);
+  21   2              } while (--i);
+  22   1      }
+  23          void main()
+  24          {
+  25   1              if(vibrate==0){
+  26   2                      ledOne=0;//¡¡µ∆
+  27   2                      Delay2000ms();
+  28   2              }else{
+  29   2                      ledOne=1;//√µ∆
+  30   2              }
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     25    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

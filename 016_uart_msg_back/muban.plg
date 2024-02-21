@@ -1,0 +1,112 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\can\embedded training\STC\016_uart_msg_back\muban.uvproj
+Project File Date:  01/15/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(59): error C100: unprintable character 0xA3 skipped
+main.c(59): error C100: unprintable character 0xBB skipped
+main.c(60): error C141: syntax error near 'UartInit'
+main.c(68): error C100: unprintable character 0xA3 skipped
+main.c(68): error C100: unprintable character 0xBB skipped
+main.c(69): error C141: syntax error near '}'
+main.c(71): error C100: unprintable character 0xA3 skipped
+main.c(71): error C100: unprintable character 0xBB skipped
+main.c(72): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(59): error C100: unprintable character 0xA3 skipped
+main.c(59): error C100: unprintable character 0xBB skipped
+main.c(60): error C141: syntax error near 'UartInit'
+main.c(68): error C100: unprintable character 0xA3 skipped
+main.c(68): error C100: unprintable character 0xBB skipped
+main.c(69): error C141: syntax error near '}'
+main.c(71): error C100: unprintable character 0xA3 skipped
+main.c(71): error C100: unprintable character 0xBB skipped
+main.c(72): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(59): error C100: unprintable character 0xA3 skipped
+main.c(59): error C100: unprintable character 0xBB skipped
+main.c(60): error C141: syntax error near 'UartInit'
+main.c(68): error C100: unprintable character 0xA3 skipped
+main.c(68): error C100: unprintable character 0xBB skipped
+main.c(69): error C141: syntax error near '}'
+main.c(71): error C100: unprintable character 0xA3 skipped
+main.c(71): error C100: unprintable character 0xBB skipped
+main.c(72): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(59): error C100: unprintable character 0xA3 skipped
+main.c(59): error C100: unprintable character 0xBB skipped
+main.c(60): error C141: syntax error near 'UartInit'
+main.c(70): error C141: syntax error near '}'
+main.c(74): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(59): error C100: unprintable character 0xA3 skipped
+main.c(59): error C100: unprintable character 0xBB skipped
+main.c(60): error C141: syntax error near 'UartInit'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=10.0 xdata=0 code=193
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=10.0 xdata=0 code=193
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=10.0 xdata=0 code=195
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=10.0 xdata=0 code=195
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=10.0 xdata=0 code=195
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=10.0 xdata=0 code=195
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=9.0 xdata=0 code=162
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).

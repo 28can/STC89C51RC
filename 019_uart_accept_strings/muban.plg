@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\can\embedded training\STC\019_uart_accept_strings\muban.uvproj
+Project File Date:  01/15/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(86): error C141: syntax error near '{'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=35.0 xdata=0 code=645
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).

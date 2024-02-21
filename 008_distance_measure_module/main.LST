@@ -1,0 +1,84 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              01/20/2024 11:01:33 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\app\keil 5\keil_v4\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg52.h"//选择Inter 8052编译
+   2          #include "intrins.h"//_nop_
+   3          //*LED引脚定义*/
+   4          sbit ledOne = P3^7;
+   5          sbit ledTwo = P3^6;
+   6          /*测距模块引脚定义*/
+   7          sbit Echo =P1^6;
+   8          sbit Trig =P1^5;
+   9          void TimStart(){
+  10   1              TMOD &= 0xF0;                   //设置定时器模式
+  11   1              TMOD |= 0x01;                   //设置定时器模式
+  12   1              TL0 = 0x00;                             //设置定时初始值
+  13   1              TH0 = 0x00;                             //设置定时初始值
+  14   1      //      TF0 = 0;                                //清除TF0标志
+  15   1      //      TR0 = 1;                                //定时器0开始计时
+  16   1      }
+  17          void Delay10ms()                //@11.0592MHz
+  18          {
+  19   1              unsigned char i, j;
+  20   1      
+  21   1              i = 18;
+  22   1              j = 235;
+  23   1              do
+  24   1              {
+  25   2                      while (--j);
+  26   2              } while (--i);
+  27   1      }
+  28          
+  29          void StartHC(){
+  30   1              Trig=0;
+  31   1              Trig=1;
+  32   1              Delay10ms();
+  33   1              Trig=0;
+  34   1      }
+  35          void main()
+  36          {
+  37   1              while(1){
+  38   2                      double time;
+  39   2                      double distance;
+  40   2                      TimStart();
+  41   2                      StartHC();
+  42   2                      while(Echo==0);//波出去
+  43   2                      TR0=1;//启动定时器计时
+  44   2                      while(Echo==1);//波回来
+  45   2                      TR0=0;//停止计时
+  46   2                      time=(TH0*256+TL0)*1.085;//us
+  47   2                      distance=time*0.034/2;//0.034cm/us:速度
+  48   2                      if(distance<10){
+  49   3                              ledOne=0;
+  50   3                              ledTwo=1;
+  51   3                      }else{
+  52   3                              ledOne=1;
+  53   3                              ledTwo=0;
+  54   3                      }
+  55   2                      //定时器清零
+C51 COMPILER V9.52.0.0   MAIN                                                              01/20/2024 11:01:33 PAGE 2   
+
+  56   2                      TL0 = 0x00;                             //设置定时初始值
+  57   2                      TH0 = 0x00;
+  58   2              }
+  59   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    157    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

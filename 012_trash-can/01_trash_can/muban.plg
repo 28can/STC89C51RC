@@ -1,0 +1,169 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\can\embedded training\STC\012_trash-can\008_distance_measure_module\muban.uvproj
+Project File Date:  01/15/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(46): error C174: return-expression on void-function
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(46): error C174: return-expression on void-function
+Target not created
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling main.c...
+main.c(46): error C174: return-expression on void-function
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(87): error C174: return-expression on void-function
+main.c(107): error C100: unprintable character 0xA3 skipped
+main.c(107): error C100: unprintable character 0xBB skipped
+main.c(108): error C141: syntax error near 'Time1Init'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(107): error C100: unprintable character 0xA3 skipped
+main.c(107): error C100: unprintable character 0xBB skipped
+main.c(108): error C141: syntax error near 'Time1Init'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY2000MS?MAIN
+Program Size: data=21.0 xdata=0 code=1113
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=21.0 xdata=0 code=1141
+creating hex file from "muban"...
+"muban" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=21.0 xdata=0 code=1141
+creating hex file from "muban"...
+"muban" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=21.0 xdata=0 code=1149
+creating hex file from "muban"...
+"muban" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY2000MS?MAIN
+Program Size: data=21.0 xdata=0 code=1159
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+Program Size: data=21.0 xdata=0 code=1176
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+Program Size: data=21.0 xdata=0 code=1176
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+Program Size: data=21.0 xdata=0 code=1176
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(141): warning C206: 'initSG90_0': missing function-prototype
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  INITSG90_0
+    MODULE:  main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  INITSG90_0
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 03AAH
+Program Size: data=21.0 xdata=0 code=1174
+creating hex file from "muban"...
+"muban" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(143): warning C206: 'initSG90_0': missing function-prototype
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  INITSG90_0
+    MODULE:  main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  INITSG90_0
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 03AAH
+Program Size: data=21.0 xdata=0 code=1175
+creating hex file from "muban"...
+"muban" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+Program Size: data=21.0 xdata=0 code=1176
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+main.c(144): warning C206: 'initSG90_0': missing function-prototype
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  INITSG90_0
+    MODULE:  main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  INITSG90_0
+    MODULE:  main.obj (MAIN)
+    ADDRESS: 03AAH
+Program Size: data=21.0 xdata=0 code=1175
+creating hex file from "muban"...
+"muban" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+Program Size: data=21.0 xdata=0 code=1172
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+Program Size: data=21.0 xdata=0 code=1172
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY300MS?MAIN
+Program Size: data=21.0 xdata=0 code=1178
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).

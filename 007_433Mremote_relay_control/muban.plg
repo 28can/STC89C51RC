@@ -1,0 +1,68 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\can\embedded training\module\433Mremote_relay_control\muban.uvproj
+Project File Date:  01/15/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(34): error C141: syntax error near ''
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(34): error C141: syntax error near ''
+Target not created
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling main.c...
+main.c(34): error C141: syntax error near ''
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY2000MS?MAIN
+Program Size: data=9.0 xdata=0 code=41
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY2000MS?MAIN
+Program Size: data=9.0 xdata=0 code=41
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY2000MS?MAIN
+Program Size: data=9.0 xdata=0 code=41
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY2000MS?MAIN
+Program Size: data=9.0 xdata=0 code=41
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY2000MS?MAIN
+Program Size: data=9.0 xdata=0 code=41
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY2000MS?MAIN
+Program Size: data=9.0 xdata=0 code=41
+creating hex file from "muban"...
+"muban" - 0 Error(s), 1 Warning(s).

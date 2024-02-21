@@ -1,0 +1,120 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              02/16/2024 23:07:57 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\app\keil 5\keil_v4\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg52.h"//选择Inter 8052编译
+   2          #include "intrins.h"
+   3          #include "string.h"
+   4          #define SIZE 12
+   5          /*LED引脚*/
+   6          sbit ledOne = P3^7;
+   7          sbit ledTwo = P3^6;
+   8          /*全局变量*/
+   9          char cmd[SIZE];
+  10          /*延迟10毫秒*/
+  11          void Delay10ms(){               //@11.0592MHz
+  12   1              unsigned char i, j;
+  13   1      
+  14   1              i = 18;
+  15   1              j = 235;
+  16   1              do
+  17   1              {
+  18   2                      while (--j);
+  19   2              } while (--i);
+  20   1      }
+  21          /*延迟1000毫秒*/
+  22          void Delay1000ms(){             //@11.0592MHz
+  23   1              unsigned char i, j, k;
+  24   1      
+  25   1              _nop_();
+  26   1              i = 8;
+  27   1              j = 1;
+  28   1              k = 243;
+  29   1              do
+  30   1              {
+  31   2                      do
+  32   2                      {
+  33   3                              while (--k);
+  34   3                      } while (--j);
+  35   2              } while (--i);
+  36   1      }
+  37          /*串口1初始化*/
+  38          void UartInit(void){            //9600bps@11.0592MHz
+  39   1              AUXR = 0x01;
+  40   1              SCON = 0x50;            //选择串口工作方式1，使能REN
+  41   1              TMOD &= 0xF0;
+  42   1              TMOD |= 0x20;           //设定定时器1为8位自动重装方式
+  43   1              TL1 = 0xFD;             
+  44   1              TH1 = 0xFD;             //设定9600波特率
+  45   1              TR1 = 1;                //启动定时器1
+  46   1              EA = 1;//开启总中断
+  47   1              ES = 1;
+  48   1      }
+  49          /*发送字符*/
+  50          void sendByte(char data_msg){
+  51   1              SBUF =data_msg;
+  52   1              //Delay10ms();
+  53   1              while(!TI);
+  54   1              TI = 0;
+  55   1      }
+C51 COMPILER V9.52.0.0   MAIN                                                              02/16/2024 23:07:57 PAGE 2   
+
+  56          /*发送字符串*/
+  57          void sendString(char* str){
+  58   1              while(*str != '\0'){
+  59   2                      sendByte(*str);
+  60   2                      str++;
+  61   2              }
+  62   1      }
+  63          void main(){
+  64   1              ledOne = 1;
+  65   1              UartInit();
+  66   1              while(1){
+  67   2                      Delay1000ms();
+  68   2                      sendString("hello world!\r\n");
+  69   2              }
+  70   1      }
+  71          void Uart_Handler() interrupt 4
+  72          {
+  73   1              static int i = 0;
+  74   1              if(RI){
+  75   2                      RI = 0;
+  76   2                      cmd[i] =SBUF;
+  77   2                      i++;
+  78   2                      if(cmd == SIZE){
+  79   3                              i = 0;
+  80   3                      }
+  81   2                      if(strstr(cmd,"en")){
+  82   3                              ledOne = 0;
+  83   3                              i = 0;
+  84   3                              memset(cmd ,'\0', SIZE);
+  85   3                      }
+  86   2                      if(strstr(cmd,"se")){
+  87   3                              ledOne = 1;
+  88   3                              i = 0;
+  89   3                              memset(cmd ,'\0', SIZE);
+  90   3                      }
+  91   2              }
+  92   1              if(TI){
+  93   2                      
+  94   2              }
+  95   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    274    ----
+   CONSTANT SIZE    =     21    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     14    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

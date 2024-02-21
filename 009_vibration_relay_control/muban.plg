@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\can\embedded training\module\vibration_relay_control\muban.uvproj
+Project File Date:  01/15/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(27): error C100: unprintable character 0xA3 skipped
+main.c(27): error C100: unprintable character 0xBB skipped
+main.c(28): error C141: syntax error near 'Delay2000ms'
+main.c(28): error C100: unprintable character 0xA3 skipped
+main.c(28): error C100: unprintable character 0xBB skipped
+main.c(29): error C141: syntax error near 'switcher'
+main.c(29): error C100: unprintable character 0xA3 skipped
+main.c(29): error C100: unprintable character 0xBB skipped
+main.c(30): error C141: syntax error near '}'
+main.c(31): error C100: unprintable character 0xA3 skipped
+main.c(31): error C100: unprintable character 0xBB skipped
+main.c(32): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=43
+creating hex file from "muban"...
+"muban" - 0 Error(s), 0 Warning(s).
